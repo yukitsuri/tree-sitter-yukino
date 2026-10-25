@@ -1,0 +1,16 @@
+{
+  "grammars": [
+    {
+      "name": "yukino",
+      "scope": "source.yukino",
+      "file-types": [
+        "ykn"
+      ],
+      "injection-regex": "^yukino$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "description": "Tree-sitter parser for the Yukino programming language"
+  }
+}

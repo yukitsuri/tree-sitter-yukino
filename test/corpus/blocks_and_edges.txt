@@ -1,0 +1,101 @@
+==================
+block expressions and trailing commas
+==================
+
+fun f() -> int32 {
+    set e = {}
+    set x = { g(); 5 }
+    set t = { a ? b : c }
+    { set y = 1 }
+    set m = { "a": 1, }
+    switch q {
+        (a,) -> 1
+        P { x, } -> 2
+        V(a,) -> 3
+        else -> 4
+    }
+    a::b::c!(1)
+    return x
+}
+
+---
+
+(source_file
+  (function_declaration
+    (identifier)
+    (parameters)
+    (primitive_type)
+    (block
+      (variable_declaration
+        (identifier)
+        (block))
+      (variable_declaration
+        (identifier)
+        (block
+          (expression_statement
+            (call_expression
+              (identifier)
+              (arguments)))
+          (expression_statement
+            (number
+              (integer)))))
+      (variable_declaration
+        (identifier)
+        (block
+          (expression_statement
+            (ternary_expression
+              (identifier)
+              (identifier)
+              (identifier)))))
+      (expression_statement
+        (block
+          (variable_declaration
+            (identifier)
+            (number
+              (integer)))))
+      (variable_declaration
+        (identifier)
+        (map_expression
+          (map_entry
+            (string
+              (string_content))
+            (number
+              (integer)))))
+      (expression_statement
+        (switch_statement
+          (identifier)
+          (switch_body
+            (switch_arm
+              (pattern_tuple
+                (identifier))
+              (number
+                (integer)))
+            (switch_arm
+              (struct_pattern
+                (identifier)
+                (struct_pattern_field
+                  (identifier)))
+              (number
+                (integer)))
+            (switch_arm
+              (variant_pattern
+                (identifier)
+                (variant_payload
+                  (identifier)))
+              (number
+                (integer)))
+            (switch_arm
+              (number
+                (integer))))))
+      (expression_statement
+        (macro_call_expression
+          (scoped_identifier
+            (scoped_identifier
+              (identifier)
+              (identifier))
+            (identifier))
+          (arguments
+            (number
+              (integer)))))
+      (return_statement
+        (identifier)))))

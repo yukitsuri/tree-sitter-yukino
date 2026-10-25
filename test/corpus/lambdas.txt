@@ -1,0 +1,79 @@
+==================
+arrow and block lambdas
+==================
+
+set add = fun(a: int32, b: int32) => a + b
+set inc = fun(x: int32) => x + 1
+set zero = fun() => 0
+set mul = fun(x: int32) -> int32 { return x * 3; }
+set short_arrow = () => 42
+set apply_call = apply(fun(x: int32) => x + 10, 5)
+
+---
+
+(source_file
+  (variable_declaration
+    name: (identifier)
+    value: (lambda_expression
+      parameters: (parameters
+        (parameter
+          name: (identifier)
+          type: (primitive_type))
+        (parameter
+          name: (identifier)
+          type: (primitive_type)))
+      body: (binary_expression
+        left: (identifier)
+        right: (identifier))))
+  (variable_declaration
+    name: (identifier)
+    value: (lambda_expression
+      parameters: (parameters
+        (parameter
+          name: (identifier)
+          type: (primitive_type)))
+      body: (binary_expression
+        left: (identifier)
+        right: (number
+          (integer)))))
+  (variable_declaration
+    name: (identifier)
+    value: (lambda_expression
+      parameters: (parameters)
+      body: (number
+        (integer))))
+  (variable_declaration
+    name: (identifier)
+    value: (lambda_expression
+      parameters: (parameters
+        (parameter
+          name: (identifier)
+          type: (primitive_type)))
+      return_type: (primitive_type)
+      body: (block
+        (return_statement
+          (binary_expression
+            left: (identifier)
+            right: (number
+              (integer)))))))
+  (variable_declaration
+    name: (identifier)
+    value: (arrow_function
+      body: (number
+        (integer))))
+  (variable_declaration
+    name: (identifier)
+    value: (call_expression
+      function: (identifier)
+      arguments: (arguments
+        (lambda_expression
+          parameters: (parameters
+            (parameter
+              name: (identifier)
+              type: (primitive_type)))
+          body: (binary_expression
+            left: (identifier)
+            right: (number
+              (integer))))
+        (number
+          (integer))))))

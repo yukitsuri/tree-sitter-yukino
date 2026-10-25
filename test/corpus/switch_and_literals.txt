@@ -1,0 +1,227 @@
+==================
+switch patterns with bindings and guards
+==================
+
+switch score {
+    100 -> {
+        space
+    }
+    s if s >= 80 -> {
+        space
+    }
+    201 | 204 -> ok()
+    Color::Red(x) -> ok()
+    Point { x, y: z } -> ok()
+    (a, b) -> ok()
+    1..5 -> ok()
+    else -> ok()
+}
+
+---
+
+(source_file
+  (expression_statement
+    (switch_statement
+      (identifier)
+      (switch_body
+        (switch_arm
+          (number
+            (integer))
+          (block
+            (space_statement)))
+        (switch_arm
+          (identifier)
+          (binary_expression
+            (identifier)
+            (number
+              (integer)))
+          (block
+            (space_statement)))
+        (switch_arm
+          (number
+            (integer))
+          (number
+            (integer))
+          (call_expression
+            (identifier)
+            (arguments)))
+        (switch_arm
+          (variant_pattern
+            (identifier)
+            (identifier)
+            (variant_payload
+              (identifier)))
+          (call_expression
+            (identifier)
+            (arguments)))
+        (switch_arm
+          (struct_pattern
+            (identifier)
+            (struct_pattern_field
+              (identifier))
+            (struct_pattern_field
+              (identifier)
+              (identifier)))
+          (call_expression
+            (identifier)
+            (arguments)))
+        (switch_arm
+          (pattern_tuple
+            (identifier)
+            (identifier))
+          (call_expression
+            (identifier)
+            (arguments)))
+        (switch_arm
+          (number
+            (integer))
+          (number
+            (integer))
+          (call_expression
+            (identifier)
+            (arguments)))
+        (switch_arm
+          (call_expression
+            (identifier)
+            (arguments)))))))
+
+==================
+map literals, macro delimiters and define with bang
+==================
+
+set couple = { x: "123", y: "zalupa" }
+set m = { "a": 1 }
+foo!(1)
+a::b!(2)
+bar!{ 3 }
+baz![4]
+define mac!(a) => a
+
+---
+
+(source_file
+  (variable_declaration
+    (identifier)
+    (map_expression
+      (map_entry
+        (identifier)
+        (string
+          (string_content)))
+      (map_entry
+        (identifier)
+        (string
+          (string_content)))))
+  (variable_declaration
+    (identifier)
+    (map_expression
+      (map_entry
+        (string
+          (string_content))
+        (number
+          (integer)))))
+  (expression_statement
+    (macro_call_expression
+      (identifier)
+      (arguments
+        (number
+          (integer)))))
+  (expression_statement
+    (macro_call_expression
+      (scoped_identifier
+        (identifier)
+        (identifier))
+      (arguments
+        (number
+          (integer)))))
+  (expression_statement
+    (macro_call_expression
+      (identifier)
+      (macro_brace_arguments
+        (number
+          (integer)))))
+  (expression_statement
+    (macro_call_expression
+      (identifier)
+      (macro_bracket_arguments
+        (number
+          (integer)))))
+  (macro_declaration
+    (identifier)
+    (parameters
+      (parameter
+        (identifier)))
+    (identifier)))
+
+==================
+struct expressions with strings and optional commas
+==================
+
+set u1 = User {
+  name: "Alice"
+  city: "Wonderland"
+}
+
+set u2 = pkg::User {
+  name: "Bob",
+  bio: """
+  multiline
+  """
+}
+
+---
+
+(source_file
+  (variable_declaration
+    (identifier)
+    (struct_expression
+      (identifier)
+      (struct_field_initializer
+        (identifier)
+        (string
+          (string_content)))
+      (struct_field_initializer
+        (identifier)
+        (string
+          (string_content)))))
+  (variable_declaration
+    (identifier)
+    (struct_expression
+      (scoped_identifier
+        (identifier)
+        (identifier))
+      (struct_field_initializer
+        (identifier)
+        (string
+          (string_content)))
+      (struct_field_initializer
+        (identifier)
+        (string
+          (multiline_string_content))))))
+
+==================
+macro and call with named arguments
+==================
+
+cfg!(target_os = "windows")
+foo(bar = 123)
+
+---
+
+(source_file
+  (expression_statement
+    (macro_call_expression
+      macro: (identifier)
+      arguments: (arguments
+        (named_argument
+          name: (identifier)
+          value: (string
+            (string_content))))))
+  (expression_statement
+    (call_expression
+      function: (identifier)
+      arguments: (arguments
+        (named_argument
+          name: (identifier)
+          value: (number
+            (integer)))))))
+

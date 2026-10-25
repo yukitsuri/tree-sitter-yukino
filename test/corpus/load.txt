@@ -1,0 +1,177 @@
+==================
+load with relative prefix and forced folder
+==================
+
+load .subpkg!: helper_fn
+load ..
+load ...grand: x
+
+---
+
+(source_file
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))))
+  (import_statement
+    (import_path
+      (relative_prefix)))
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier)))))
+
+==================
+load with package and root prefixes
+==================
+
+load std.platformio!
+load lib.path.to.folder!
+load root.components.button!: render
+load std
+
+---
+
+(source_file
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier)))))
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier)))
+      (import_segment
+        (import_pattern
+          (identifier)))
+      (import_segment
+        (import_pattern
+          (identifier)))))
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier)))
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))))
+  (import_statement
+    (import_path
+      (identifier))))
+
+==================
+load symbol patterns and aliases
+==================
+
+load .worker: *
+load .worker: work*
+load .handlers: *Handler
+load root.math: add, multiply as my_add, my_mul
+
+---
+
+(source_file
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern)))
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))))
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))))
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))
+      (import_pattern
+        (identifier))
+      (identifier)
+      (identifier))))
+
+==================
+load directory patterns
+==================
+
+load .models.*
+load .suites.test_*
+
+---
+
+(source_file
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier)))
+      (import_segment
+        (import_pattern))))
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier)))
+      (import_segment
+        (import_pattern
+          (identifier))))))
+
+==================
+public load
+==================
+
+public load std.io: print
+
+---
+
+(source_file
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier)))))

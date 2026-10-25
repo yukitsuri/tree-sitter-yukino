@@ -1,0 +1,75 @@
+==================
+module and item attributes
+==================
+
+#![cfg(target_os = "linux")]
+!#[cold]
+
+#[inline, cold]
+#[json::rename = "user_name"]
+#[!mangle]
+public fun handle_user() {
+  space
+}
+
+struct UserAccount {
+  #[json::rename = "account_id"]
+  id: int64
+  #[db::primary_key]
+  name: string
+}
+
+---
+
+(source_file
+  (module_attribute
+    (attribute_item
+      name: (identifier)
+      (attribute_named_arg
+        name: (identifier)
+        value: (string
+          (string_content)))))
+  (module_attribute
+    (attribute_item
+      name: (identifier)))
+  (function_declaration
+    (attribute
+      (attribute_item
+        name: (identifier))
+      (attribute_item
+        name: (identifier)))
+    (attribute
+      (attribute_item
+        name: (scoped_identifier
+          (identifier)
+          (identifier))
+        value: (string
+          (string_content))))
+    (attribute
+      (attribute_item
+        name: (identifier)))
+    name: (identifier)
+    parameters: (parameters)
+    body: (block
+      (space_statement)))
+  (struct_declaration
+    name: (identifier)
+    body: (struct_body
+      (field_declaration
+        (attribute
+          (attribute_item
+            name: (scoped_identifier
+              (identifier)
+              (identifier))
+            value: (string
+              (string_content))))
+        name: (identifier)
+        type: (primitive_type))
+      (field_declaration
+        (attribute
+          (attribute_item
+            name: (scoped_identifier
+              (identifier)
+              (identifier))))
+        name: (identifier)
+        type: (primitive_type)))))
