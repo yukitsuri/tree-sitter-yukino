@@ -58,6 +58,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -67,6 +71,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -91,6 +99,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -126,6 +138,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -135,6 +151,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -155,6 +175,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -189,6 +213,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -198,6 +226,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -222,6 +254,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -253,6 +289,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -262,6 +302,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -282,6 +326,37 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array_pattern",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "map_pattern",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
           "named": true
         }
       ]
@@ -316,6 +391,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -325,6 +404,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -349,6 +432,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -380,6 +467,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -389,6 +480,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -409,6 +504,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -431,6 +530,358 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "assignment_statement",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "%=",
+            "named": false
+          },
+          {
+            "type": "&=",
+            "named": false
+          },
+          {
+            "type": "**=",
+            "named": false
+          },
+          {
+            "type": "*=",
+            "named": false
+          },
+          {
+            "type": "+=",
+            "named": false
+          },
+          {
+            "type": "-=",
+            "named": false
+          },
+          {
+            "type": "/=",
+            "named": false
+          },
+          {
+            "type": "<<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": ">>=",
+            "named": false
+          },
+          {
+            "type": "^=",
+            "named": false
+          },
+          {
+            "type": "|=",
+            "named": false
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "arrow_function",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "init_expression",
+            "named": true
+          },
+          {
+            "type": "is_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
+            "named": true
+          },
+          {
+            "type": "macro_call_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "region_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
+            "named": true
+          },
+          {
+            "type": "switch_statement",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "arrow_function",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "init_expression",
+            "named": true
+          },
+          {
+            "type": "is_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
+            "named": true
+          },
+          {
+            "type": "macro_call_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "region_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
+            "named": true
+          },
+          {
+            "type": "switch_statement",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -499,6 +950,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -508,6 +963,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -532,6 +991,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -563,6 +1026,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -572,6 +1039,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -592,6 +1063,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -626,6 +1101,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -635,6 +1114,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -659,6 +1142,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -690,6 +1177,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -699,6 +1190,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -719,6 +1214,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -763,6 +1262,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -772,6 +1275,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -796,6 +1303,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -827,6 +1338,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -836,6 +1351,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -856,6 +1375,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -891,6 +1414,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -900,6 +1427,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -924,6 +1455,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -955,6 +1490,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -964,6 +1503,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -984,6 +1527,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -1077,6 +1624,10 @@
             "named": false
           },
           {
+            "type": "|>",
+            "named": false
+          },
+          {
             "type": "||",
             "named": false
           }
@@ -1107,6 +1658,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -1116,6 +1671,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -1140,6 +1699,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -1171,6 +1734,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1180,6 +1747,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -1201,6 +1772,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       }
@@ -1216,6 +1791,10 @@
       "types": [
         {
           "type": "alias_declaration",
+          "named": true
+        },
+        {
+          "type": "assignment_statement",
           "named": true
         },
         {
@@ -1251,10 +1830,6 @@
           "named": true
         },
         {
-          "type": "for_statement",
-          "named": true
-        },
-        {
           "type": "function_declaration",
           "named": true
         },
@@ -1264,10 +1839,6 @@
         },
         {
           "type": "interface_declaration",
-          "named": true
-        },
-        {
-          "type": "loop_statement",
           "named": true
         },
         {
@@ -1295,19 +1866,11 @@
           "named": true
         },
         {
-          "type": "sus_statement",
-          "named": true
-        },
-        {
           "type": "type_alias_declaration",
           "named": true
         },
         {
           "type": "variable_declaration",
-          "named": true
-        },
-        {
-          "type": "while_statement",
           "named": true
         }
       ]
@@ -1398,6 +1961,218 @@
     }
   },
   {
+    "type": "cast_expression",
+    "named": true,
+    "fields": {
+      "cast": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "::",
+            "named": false
+          },
+          {
+            "type": "cast",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "nullable_type",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
+            "named": true
+          },
+          {
+            "type": "tuple_type",
+            "named": true
+          },
+          {
+            "type": "union_type",
+            "named": true
+          },
+          {
+            "type": "user_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "arrow_function",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "init_expression",
+            "named": true
+          },
+          {
+            "type": "is_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
+            "named": true
+          },
+          {
+            "type": "macro_call_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "region_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
+            "named": true
+          },
+          {
+            "type": "switch_statement",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "cfun_declaration",
     "named": true,
     "fields": {
@@ -1445,6 +2220,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -1588,7 +2367,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "user_type",
           "named": true
         }
       ]
@@ -1655,6 +2434,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -1664,6 +2447,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -1688,6 +2475,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -1719,6 +2510,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1728,6 +2523,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -1748,6 +2547,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -1844,6 +2647,10 @@
             "named": true
           },
           {
+            "type": "ref_type",
+            "named": true
+          },
+          {
             "type": "slice_type",
             "named": true
           },
@@ -1869,6 +2676,10 @@
         {
           "type": "attribute",
           "named": true
+        },
+        {
+          "type": "type_parameters",
+          "named": true
         }
       ]
     }
@@ -1883,6 +2694,16 @@
         "types": [
           {
             "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "enum_variant_parameters",
             "named": true
           }
         ]
@@ -1917,6 +2738,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -1926,6 +2751,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -1953,6 +2782,10 @@
           "named": true
         },
         {
+          "type": "loop_statement",
+          "named": true
+        },
+        {
           "type": "macro_call_expression",
           "named": true
         },
@@ -1969,10 +2802,6 @@
           "named": true
         },
         {
-          "type": "parameters",
-          "named": true
-        },
-        {
           "type": "parenthesized_expression",
           "named": true
         },
@@ -1985,6 +2814,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1994,6 +2827,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -2014,6 +2851,267 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_variant_parameter",
+    "named": true,
+    "fields": {
+      "default_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "arrow_function",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "init_expression",
+            "named": true
+          },
+          {
+            "type": "is_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
+            "named": true
+          },
+          {
+            "type": "macro_call_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "region_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
+            "named": true
+          },
+          {
+            "type": "switch_statement",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "nullable_type",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
+            "named": true
+          },
+          {
+            "type": "slice_type",
+            "named": true
+          },
+          {
+            "type": "tuple_type",
+            "named": true
+          },
+          {
+            "type": "union_type",
+            "named": true
+          },
+          {
+            "type": "user_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "function_type",
+          "named": true
+        },
+        {
+          "type": "nullable_type",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "ref_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
+          "named": true
+        },
+        {
+          "type": "tuple_type",
+          "named": true
+        },
+        {
+          "type": "union_type",
+          "named": true
+        },
+        {
+          "type": "user_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_variant_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enum_variant_parameter",
           "named": true
         }
       ]
@@ -2048,6 +3146,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -2057,6 +3159,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -2081,6 +3187,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -2112,6 +3222,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -2121,6 +3235,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -2141,6 +3259,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -2204,6 +3326,10 @@
             "named": true
           },
           {
+            "type": "ref_type",
+            "named": true
+          },
+          {
             "type": "slice_type",
             "named": true
           },
@@ -2251,6 +3377,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -2260,6 +3390,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -2284,6 +3418,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -2315,6 +3453,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -2324,6 +3466,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -2344,6 +3490,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -2378,6 +3528,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -2387,6 +3541,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -2411,6 +3569,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -2442,6 +3604,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2451,6 +3617,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -2472,6 +3642,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       },
@@ -2485,6 +3659,16 @@
           },
           {
             "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "method": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -2520,7 +3704,19 @@
         "required": true,
         "types": [
           {
+            "type": "_",
+            "named": false
+          },
+          {
+            "type": "array_pattern",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "map_pattern",
             "named": true
           },
           {
@@ -2554,6 +3750,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -2563,6 +3763,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -2587,6 +3791,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -2618,6 +3826,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2627,6 +3839,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -2648,11 +3864,15 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       },
       "label": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
@@ -2669,7 +3889,7 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
@@ -2711,6 +3931,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -2768,6 +3992,10 @@
           "named": true
         },
         {
+          "type": "ref_type",
+          "named": true
+        },
+        {
           "type": "slice_type",
           "named": true
         },
@@ -2815,6 +4043,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -2824,6 +4056,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -2848,6 +4084,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -2879,6 +4119,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2888,6 +4132,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -2908,6 +4156,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -3082,6 +4334,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -3091,6 +4347,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -3115,6 +4375,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -3146,6 +4410,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -3155,6 +4423,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -3175,6 +4447,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -3204,6 +4480,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -3213,6 +4493,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -3237,6 +4521,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -3268,6 +4556,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -3277,6 +4569,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -3297,6 +4593,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -3356,6 +4656,10 @@
         },
         {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "ref_type",
           "named": true
         },
         {
@@ -3461,6 +4765,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -3470,6 +4778,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -3494,6 +4806,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -3525,6 +4841,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -3534,6 +4854,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -3554,6 +4878,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -3588,6 +4916,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -3597,6 +4929,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -3621,6 +4957,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -3652,6 +4992,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -3661,6 +5005,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -3682,6 +5030,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       },
@@ -3699,6 +5051,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -3750,6 +5106,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -3759,6 +5119,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -3783,6 +5147,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -3814,6 +5182,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -3823,6 +5195,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -3843,6 +5219,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -3871,6 +5251,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -3928,7 +5312,7 @@
         ]
       },
       "label": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
@@ -3968,6 +5352,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -3977,6 +5365,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -4001,6 +5393,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -4036,6 +5432,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -4045,6 +5445,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -4065,6 +5469,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -4099,6 +5507,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -4108,6 +5520,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -4132,6 +5548,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -4167,6 +5587,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -4176,6 +5600,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -4196,6 +5624,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -4303,6 +5735,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -4312,6 +5748,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -4336,6 +5776,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -4367,6 +5811,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -4376,6 +5824,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -4396,6 +5848,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -4430,6 +5886,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -4439,6 +5899,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -4463,6 +5927,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -4494,6 +5962,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -4503,6 +5975,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -4523,6 +5999,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -4552,6 +6032,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -4561,6 +6045,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -4585,6 +6073,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -4616,6 +6108,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -4625,6 +6121,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -4645,6 +6145,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -4667,12 +6171,215 @@
     }
   },
   {
+    "type": "map_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "map_pattern_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "map_pattern_field",
+    "named": true,
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "_",
+            "named": false
+          },
+          {
+            "type": "array_pattern",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "map_pattern",
+            "named": true
+          },
+          {
+            "type": "tuple_pattern",
+            "named": true
+          }
+        ]
+      },
+      "default_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "arrow_function",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "init_expression",
+            "named": true
+          },
+          {
+            "type": "is_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
+            "named": true
+          },
+          {
+            "type": "macro_call_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "region_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
+            "named": true
+          },
+          {
+            "type": "switch_statement",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      },
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "method_declaration",
     "named": true,
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
@@ -4714,6 +6421,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -4798,6 +6509,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -4888,6 +6603,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -4897,6 +6616,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -4921,6 +6644,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -4952,6 +6679,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -4961,6 +6692,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -4982,6 +6717,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       }
@@ -5001,6 +6740,10 @@
         },
         {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "ref_type",
           "named": true
         },
         {
@@ -5088,6 +6831,10 @@
             "named": true
           },
           {
+            "type": "ref_type",
+            "named": true
+          },
+          {
             "type": "slice_type",
             "named": true
           },
@@ -5151,6 +6898,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -5160,6 +6911,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -5184,6 +6939,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -5215,6 +6974,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -5224,6 +6987,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -5244,6 +7011,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -5272,6 +7043,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -5348,6 +7123,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -5357,6 +7136,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -5381,6 +7164,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -5412,6 +7199,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -5421,6 +7212,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -5441,6 +7236,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -5553,6 +7352,10 @@
             "named": true
           },
           {
+            "type": "ref_type",
+            "named": true
+          },
+          {
             "type": "slice_type",
             "named": true
           },
@@ -5592,6 +7395,10 @@
           "named": true
         },
         {
+          "type": "ref_type",
+          "named": true
+        },
+        {
           "type": "slice_type",
           "named": true
         },
@@ -5620,6 +7427,49 @@
       "types": [
         {
           "type": "arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ref_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "function_type",
+          "named": true
+        },
+        {
+          "type": "nullable_type",
+          "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "ref_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
+          "named": true
+        },
+        {
+          "type": "tuple_type",
+          "named": true
+        },
+        {
+          "type": "union_type",
+          "named": true
+        },
+        {
+          "type": "user_type",
           "named": true
         }
       ]
@@ -5670,6 +7520,10 @@
           "named": true
         },
         {
+          "type": "cast_expression",
+          "named": true
+        },
+        {
           "type": "char",
           "named": true
         },
@@ -5679,6 +7533,10 @@
         },
         {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "for_statement",
           "named": true
         },
         {
@@ -5703,6 +7561,10 @@
         },
         {
           "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "loop_statement",
           "named": true
         },
         {
@@ -5734,6 +7596,10 @@
           "named": true
         },
         {
+          "type": "spread_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -5743,6 +7609,10 @@
         },
         {
           "type": "super",
+          "named": true
+        },
+        {
+          "type": "sus_statement",
           "named": true
         },
         {
@@ -5763,6 +7633,10 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "while_statement",
           "named": true
         }
       ]
@@ -5851,6 +7725,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -5860,6 +7738,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -5884,6 +7766,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -5915,6 +7801,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -5924,6 +7814,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -5944,6 +7838,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -5973,6 +7871,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -5982,6 +7884,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -6006,6 +7912,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -6037,6 +7947,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -6046,6 +7960,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -6066,6 +7984,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -6124,6 +8046,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -6133,6 +8059,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -6157,6 +8087,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -6188,6 +8122,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -6197,6 +8135,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -6217,6 +8159,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -6246,6 +8192,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -6255,6 +8205,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -6279,6 +8233,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -6310,6 +8268,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -6319,6 +8281,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -6339,6 +8305,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -6374,6 +8344,10 @@
           "named": true
         },
         {
+          "type": "ref_type",
+          "named": true
+        },
+        {
           "type": "slice_type",
           "named": true
         },
@@ -6403,6 +8377,10 @@
       "types": [
         {
           "type": "alias_declaration",
+          "named": true
+        },
+        {
+          "type": "assignment_statement",
           "named": true
         },
         {
@@ -6438,10 +8416,6 @@
           "named": true
         },
         {
-          "type": "for_statement",
-          "named": true
-        },
-        {
           "type": "function_declaration",
           "named": true
         },
@@ -6451,10 +8425,6 @@
         },
         {
           "type": "interface_declaration",
-          "named": true
-        },
-        {
-          "type": "loop_statement",
           "named": true
         },
         {
@@ -6486,19 +8456,11 @@
           "named": true
         },
         {
-          "type": "sus_statement",
-          "named": true
-        },
-        {
           "type": "type_alias_declaration",
           "named": true
         },
         {
           "type": "variable_declaration",
-          "named": true
-        },
-        {
-          "type": "while_statement",
           "named": true
         }
       ]
@@ -6508,6 +8470,158 @@
     "type": "space_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "spread_expression",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "arrow_function",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "init_expression",
+            "named": true
+          },
+          {
+            "type": "is_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
+            "named": true
+          },
+          {
+            "type": "macro_call_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "region_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "struct_expression",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
+            "named": true
+          },
+          {
+            "type": "switch_statement",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "string",
@@ -6668,6 +8782,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -6677,6 +8795,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -6701,6 +8823,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -6732,6 +8858,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -6741,6 +8871,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -6761,6 +8895,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -6930,6 +9068,10 @@
             "named": true
           },
           {
+            "type": "ref_type",
+            "named": true
+          },
+          {
             "type": "slice_type",
             "named": true
           },
@@ -6998,6 +9140,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7007,6 +9153,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -7031,6 +9181,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -7062,6 +9216,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -7071,6 +9229,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -7091,6 +9253,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -7120,6 +9286,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7129,6 +9299,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -7153,6 +9327,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -7184,6 +9362,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -7193,6 +9375,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -7213,6 +9399,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -7339,6 +9529,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7348,6 +9542,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -7372,6 +9570,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -7403,6 +9605,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -7412,6 +9618,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -7432,6 +9642,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -7467,6 +9681,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7476,6 +9694,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -7500,6 +9722,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -7531,6 +9757,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -7540,6 +9770,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -7560,6 +9794,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -7589,6 +9827,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7598,6 +9840,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -7622,6 +9868,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -7653,6 +9903,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -7662,6 +9916,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -7682,6 +9940,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -7711,6 +9973,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7720,6 +9986,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -7744,6 +10014,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -7775,6 +10049,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -7784,6 +10062,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -7805,6 +10087,10 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       }
@@ -7816,10 +10102,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
+          "type": "array_pattern",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "map_pattern",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
           "named": true
         }
       ]
@@ -7843,6 +10141,10 @@
         },
         {
           "type": "primitive_type",
+          "named": true
+        },
+        {
+          "type": "ref_type",
           "named": true
         },
         {
@@ -7892,6 +10194,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -7972,6 +10278,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -7981,6 +10291,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -8005,6 +10319,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -8036,6 +10354,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -8045,6 +10367,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -8065,6 +10391,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -8114,6 +10444,10 @@
           "named": true
         },
         {
+          "type": "ref_type",
+          "named": true
+        },
+        {
           "type": "slice_type",
           "named": true
         },
@@ -8157,6 +10491,10 @@
           "named": true
         },
         {
+          "type": "ref_type",
+          "named": true
+        },
+        {
           "type": "scoped_identifier",
           "named": true
         },
@@ -8188,7 +10526,19 @@
         "required": true,
         "types": [
           {
+            "type": "_",
+            "named": false
+          },
+          {
+            "type": "array_pattern",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "map_pattern",
             "named": true
           },
           {
@@ -8211,6 +10561,10 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
             "named": true
           },
           {
@@ -8256,6 +10610,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -8265,6 +10623,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -8289,6 +10651,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -8320,6 +10686,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -8329,6 +10699,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -8349,6 +10723,10 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "while_statement",
             "named": true
           }
         ]
@@ -8491,6 +10869,10 @@
             "named": true
           },
           {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
             "type": "char",
             "named": true
           },
@@ -8500,6 +10882,10 @@
           },
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "for_statement",
             "named": true
           },
           {
@@ -8524,6 +10910,10 @@
           },
           {
             "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "loop_statement",
             "named": true
           },
           {
@@ -8555,6 +10945,10 @@
             "named": true
           },
           {
+            "type": "spread_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -8564,6 +10958,10 @@
           },
           {
             "type": "super",
+            "named": true
+          },
+          {
+            "type": "sus_statement",
             "named": true
           },
           {
@@ -8585,11 +10983,15 @@
           {
             "type": "unary_expression",
             "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
           }
         ]
       },
       "label": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
@@ -8879,6 +11281,10 @@
   },
   {
     "type": "c_void",
+    "named": false
+  },
+  {
+    "type": "cast",
     "named": false
   },
   {
@@ -9172,6 +11578,10 @@
   },
   {
     "type": "|=",
+    "named": false
+  },
+  {
+    "type": "|>",
     "named": false
   },
   {

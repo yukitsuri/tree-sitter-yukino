@@ -1,0 +1,131 @@
+==================
+bare function signatures and methods
+==================
+
+fun span_default() -> Span
+fun token_stream(code: string) -> TokenStream
+public fun init()
+
+class HttpClient {
+  fun get(url: string) -> Response {
+    return Response {}
+  }
+  fun set(key: string, val: string) {
+    space
+  }
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters)
+    return_type: (user_type
+      (identifier)))
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters
+      (parameter
+        name: (identifier)
+        type: (primitive_type)))
+    return_type: (user_type
+      (identifier)))
+  (function_declaration
+    name: (identifier)
+    parameters: (parameters))
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        name: (identifier)
+        parameters: (parameters
+          (parameter
+            name: (identifier)
+            type: (primitive_type)))
+        return_type: (user_type
+          (identifier))
+        body: (block
+          (return_statement
+            (struct_expression
+              name: (identifier)))))
+      (method_declaration
+        name: (identifier)
+        parameters: (parameters
+          (parameter
+            name: (identifier)
+            type: (primitive_type))
+          (parameter
+            name: (identifier)
+            type: (primitive_type)))
+        body: (block
+          (space_statement))))))
+
+==================
+generic heritage and operators
+==================
+
+class Foo with Bar<T>, Baz<U, V> {
+  set name: string;
+  public get length: int32 {
+    return 0;
+  }
+  public operator +(other: Foo) -> Foo {
+    return this;
+  }
+  operator fun ~(other: Foo) -> Foo {
+    return this;
+  }
+}
+
+---
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    heritage: (class_heritage
+      (user_type
+        (identifier)
+        (user_type
+          (identifier)))
+      (user_type
+        (identifier)
+        (user_type
+          (identifier))
+        (user_type
+          (identifier))))
+    body: (class_body
+      (field_declaration
+        name: (identifier)
+        type: (primitive_type))
+      (property_declaration
+        name: (identifier)
+        return_type: (primitive_type)
+        body: (block
+          (return_statement
+            (number
+              (integer)))))
+      (operator_declaration
+        name: (operator_symbol)
+        parameters: (parameters
+          (parameter
+            name: (identifier)
+            type: (user_type
+              (identifier))))
+        return_type: (user_type
+          (identifier))
+        body: (block
+          (return_statement
+            (this))))
+      (operator_declaration
+        name: (operator_symbol)
+        parameters: (parameters
+          (parameter
+            name: (identifier)
+            type: (user_type
+              (identifier))))
+        return_type: (user_type
+          (identifier))
+        body: (block
+          (return_statement
+            (this)))))))
