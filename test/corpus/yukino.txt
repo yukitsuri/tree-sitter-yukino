@@ -1,0 +1,282 @@
+==================================
+Imports
+==================================
+load std.io: println
+public load .app: App, Config
+load std.fs: *
+load std.platformio!: custom_read
+
+---
+
+(source_file
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))))
+  (import_statement
+    (import_path
+      (relative_prefix)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier))
+      (import_pattern
+        (identifier))))
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern)))
+  (import_statement
+    (import_path
+      (identifier)
+      (import_segment
+        (import_pattern
+          (identifier))))
+    (import_symbols_clause
+      (import_pattern
+        (identifier)))))
+
+==================================
+Functions and Variables
+==================================
+fun calculate(a: int32, ref ~b: int32 = 0) -> int32 {
+    set result: int32 = a + *b;
+    rewrite b = result;
+    return result;
+}
+
+---
+
+(source_file
+  (function_declaration
+    (identifier)
+    (parameters
+      (parameter
+        (identifier)
+        (primitive_type))
+      (parameter
+        (identifier)
+        (primitive_type)
+        (literal
+          (number
+            (integer)))))
+    (primitive_type)
+    (block
+      (variable_declaration
+        (identifier)
+        (primitive_type)
+        (binary_expression
+          (identifier)
+          (unary_expression
+            (identifier))))
+      (rewrite_statement
+        (identifier)
+        (identifier))
+      (return_statement
+        (identifier)))))
+
+==================================
+Classes and Structs
+==================================
+struct Point {
+    x: int32
+    y: int32
+}
+
+class Animal {
+    name: string
+
+    fun speak() -> string {
+        return this.name;
+    }
+}
+
+---
+
+(source_file
+  (struct_declaration
+    (identifier)
+    (struct_body
+      (field_declaration
+        (identifier)
+        (primitive_type))
+      (field_declaration
+        (identifier)
+        (primitive_type))))
+  (class_declaration
+    (identifier)
+    (class_body
+      (field_declaration
+        (identifier)
+        (primitive_type))
+      (method_declaration
+        (identifier)
+        (parameters)
+        (primitive_type)
+        (block
+          (return_statement
+            (field_expression
+              (literal
+                (this))
+              (identifier))))))))
+
+==================================
+Switch and Error Handling
+==================================
+fun handle(val: int32) {
+    switch val {
+        1 -> println("one")
+        else -> println("other")
+    }
+
+    sus {
+        panic(Error { message: "fail" });
+    } catch e: Error {
+        println(e.message);
+    } finally {
+        cleanup();
+    }
+}
+
+---
+
+(source_file
+  (function_declaration
+    (identifier)
+    (parameters
+      (parameter
+        (identifier)
+        (primitive_type)))
+    (block
+      (expression_statement
+        (switch_statement
+          (identifier)
+          (switch_arm
+            (literal
+              (number
+                (integer)))
+            (call_expression
+              (identifier)
+              (argument_list
+                (literal
+                  (string
+                    (string_content))))))
+          (switch_arm
+            (call_expression
+              (identifier)
+              (argument_list
+                (literal
+                  (string
+                    (string_content))))))))
+      (sus_statement
+        (block
+          (expression_statement
+            (panic_expression
+              (struct_expression
+                (identifier)
+                (field_initializer
+                  (identifier)
+                  (literal
+                    (string
+                      (string_content))))))))
+        (catch_clause
+          (identifier)
+          (user_type
+            (identifier))
+          (block
+            (expression_statement
+              (call_expression
+                (identifier)
+                (argument_list
+                  (field_expression
+                    (identifier)
+                    (identifier)))))))
+        (finally_clause
+          (block
+            (expression_statement
+              (call_expression
+                (identifier)
+                (argument_list)))))))))
+
+==================================
+C ABI and Object Constructs
+==================================
+|cdecl|
+cfun puts(s: ptr<c_char>) -> c_int;
+
+|packed, align="4"|
+cstruct PacketHeader {
+    magic: uint16,
+    length: uint32
+}
+
+externc "math.h" {
+    cfun sin(x: float64) -> float64;
+}
+
+locked class Service {
+    fun on_tick() {
+        space
+    }
+}
+
+---
+
+(source_file
+  (cfun_declaration
+    (attribute
+      (c_attribute_item
+        (identifier)))
+    (identifier)
+    (parameters
+      (parameter
+        (identifier)
+        (pointer_type
+          (primitive_type))))
+    (primitive_type))
+  (struct_declaration
+    (attribute
+      (c_attribute_item
+        (identifier))
+      (c_attribute_item
+        (identifier)
+        (string
+          (string_content))))
+    (identifier)
+    (struct_body
+      (field_declaration
+        (identifier)
+        (primitive_type))
+      (field_declaration
+        (identifier)
+        (primitive_type))))
+  (externc_block
+    (string
+      (string_content))
+    (cfun_declaration
+      (identifier)
+      (parameters
+        (parameter
+          (identifier)
+          (primitive_type)))
+      (primitive_type)))
+  (class_declaration
+    (identifier)
+    (class_body
+      (method_declaration
+        (identifier)
+        (parameters)
+        (block
+          (space_statement))))))
+
