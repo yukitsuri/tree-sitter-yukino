@@ -1069,7 +1069,15 @@
           "named": true
         },
         {
+          "type": "cload_statement",
+          "named": true
+        },
+        {
           "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "cvar_declaration",
           "named": true
         },
         {
@@ -1797,6 +1805,32 @@
     }
   },
   {
+    "type": "cload_statement",
+    "named": true,
+    "fields": {
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "continue_statement",
     "named": true,
     "fields": {
@@ -1810,6 +1844,74 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "cvar_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "nullable_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "tuple_type",
+            "named": true
+          },
+          {
+            "type": "union_type",
+            "named": true
+          },
+          {
+            "type": "user_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2532,6 +2634,10 @@
       "types": [
         {
           "type": "cfun_declaration",
+          "named": true
+        },
+        {
+          "type": "cvar_declaration",
           "named": true
         },
         {
@@ -4511,7 +4617,15 @@
           "named": true
         },
         {
+          "type": "cload_statement",
+          "named": true
+        },
+        {
           "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "cvar_declaration",
           "named": true
         },
         {
@@ -6496,7 +6610,15 @@
           "named": true
         },
         {
+          "type": "cload_statement",
+          "named": true
+        },
+        {
           "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "cvar_declaration",
           "named": true
         },
         {
@@ -8165,6 +8287,10 @@
     "named": false
   },
   {
+    "type": "c_bool",
+    "named": false
+  },
+  {
     "type": "c_char",
     "named": false
   },
@@ -8177,6 +8303,14 @@
     "named": false
   },
   {
+    "type": "c_longlong",
+    "named": false
+  },
+  {
+    "type": "c_schar",
+    "named": false
+  },
+  {
     "type": "c_short",
     "named": false
   },
@@ -8185,7 +8319,27 @@
     "named": false
   },
   {
+    "type": "c_ssize_t",
+    "named": false
+  },
+  {
+    "type": "c_uchar",
+    "named": false
+  },
+  {
     "type": "c_uint",
+    "named": false
+  },
+  {
+    "type": "c_ulong",
+    "named": false
+  },
+  {
+    "type": "c_ulonglong",
+    "named": false
+  },
+  {
+    "type": "c_ushort",
     "named": false
   },
   {
@@ -8217,11 +8371,23 @@
     "named": false
   },
   {
+    "type": "cload",
+    "named": false
+  },
+  {
     "type": "continue",
     "named": false
   },
   {
     "type": "cstruct",
+    "named": false
+  },
+  {
+    "type": "cunion",
+    "named": false
+  },
+  {
+    "type": "cvar",
     "named": false
   },
   {

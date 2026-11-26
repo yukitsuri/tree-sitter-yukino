@@ -342,3 +342,52 @@ class Config {
               (string
                 (string_content)))))))))
 
+==================================
+C Header Loading, Unions, Globals and Variadic cfun
+==================================
+cload "native/api.h"
+public cload "native/sub.h"
+
+cunion ValueUnion {
+    a: c_longlong,
+    b: c_bool,
+}
+
+externc "x.h" {
+    cvar g: c_ssize_t;
+    cfun log(fmt: ptr<c_char>, ...) -> c_int
+}
+
+---
+
+(source_file
+  (cload_statement
+    (string
+      (string_content)))
+  (cload_statement
+    (string
+      (string_content)))
+  (struct_declaration
+    (identifier)
+    (struct_body
+      (field_declaration
+        (identifier)
+        (primitive_type))
+      (field_declaration
+        (identifier)
+        (primitive_type))))
+  (externc_block
+    (string
+      (string_content))
+    (cvar_declaration
+      (identifier)
+      (primitive_type))
+    (cfun_declaration
+      (identifier)
+      (parameters
+        (parameter
+          (identifier)
+          (pointer_type
+            (primitive_type))))
+      (primitive_type))))
+

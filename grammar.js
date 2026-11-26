@@ -60,6 +60,8 @@ module.exports = grammar({
       $.alias_declaration,
       $.type_alias_declaration,
       $.import_statement,
+      $.cload_statement,
+      $.cvar_declaration,
       $.variable_declaration,
       $.rewrite_statement,
       $.assignment_statement,
@@ -142,6 +144,7 @@ module.exports = grammar({
       repeat(choice(
         $.cfun_declaration,
         $.struct_declaration,
+        $.cvar_declaration,
         ';'
       )),
       '}'
@@ -177,7 +180,7 @@ module.exports = grammar({
     struct_declaration: $ => seq(
       repeat($.attribute),
       optional('public'),
-      choice('struct', 'cstruct'),
+      choice('struct', 'cstruct', 'cunion'),
       field('name', $.identifier),
       optional($.type_parameters),
       field('body', $.struct_body)
@@ -314,6 +317,24 @@ module.exports = grammar({
       optional(seq(':', field('symbols', $.import_symbols_clause))),
       optional(';')
     ),
+
+    cload_statement: $ => prec.right(seq(
+      repeat($.attribute),
+      optional('public'),
+      'cload',
+      field('path', $.string),
+      optional(';')
+    )),
+
+    cvar_declaration: $ => prec.right(seq(
+      repeat($.attribute),
+      optional('public'),
+      'cvar',
+      field('name', $.identifier),
+      ':',
+      field('type', $._type),
+      optional(';')
+    )),
 
     import_path: $ => seq(
       choice(
@@ -519,7 +540,10 @@ module.exports = grammar({
 
     parameters: $ => seq(
       '(',
-      commaSep($.parameter),
+      optional(choice(
+        '...',
+        seq(commaSep1($.parameter), optional(seq(',', '...')))
+      )),
       optional(','),
       ')'
     ),
@@ -563,7 +587,9 @@ module.exports = grammar({
       'uint8', 'uint16', 'uint32', 'uint64',
       'float32', 'float64',
       'bool', 'char', 'string', 'bytes', 'void', 'never',
-      'c_char', 'c_int', 'c_size_t', 'c_void', 'c_long', 'c_short', 'c_uint',
+      'c_char', 'c_schar', 'c_uchar', 'c_short', 'c_ushort',
+      'c_int', 'c_uint', 'c_long', 'c_ulong',
+      'c_longlong', 'c_ulonglong', 'c_size_t', 'c_ssize_t', 'c_bool', 'c_void',
       'usize', 'isize'
     ),
 
