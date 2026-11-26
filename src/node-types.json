@@ -711,6 +711,33 @@
     }
   },
   {
+    "type": "attribute_array",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute_item",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "attribute_item",
     "named": true,
     "fields": {
@@ -733,6 +760,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "attribute_array",
+          "named": true
+        },
         {
           "type": "attribute_item",
           "named": true

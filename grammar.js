@@ -103,12 +103,19 @@ module.exports = grammar({
       ))
     ),
 
+    attribute_array: $ => seq(
+      '[',
+      commaSep(choice($.string, $.number, $.boolean, $.attribute_item)),
+      optional(','),
+      ']'
+    ),
+
     attribute_item: $ => seq(
       optional('!'),
       field('name', choice($.scoped_identifier, $.identifier)),
       optional(choice(
-        seq('=', choice($.string, $.number, $.boolean)),
-        seq('(', commaSep(choice($.attribute_item, $.string, $.number, $.boolean)), ')')
+        seq('=', choice($.string, $.number, $.boolean, $.attribute_array)),
+        seq('(', commaSep(choice($.attribute_item, $.string, $.number, $.boolean, $.attribute_array)), ')')
       ))
     ),
 
