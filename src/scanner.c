@@ -6,6 +6,8 @@
 
 enum TokenType {
   BLOCK_COMMENT,
+  STRING_CONTENT,
+  MULTILINE_STRING_CONTENT,
 };
 
 void *tree_sitter_yukino_external_scanner_create(void) {
@@ -32,12 +34,76 @@ void tree_sitter_yukino_external_scanner_deserialize(
   (void)length;
 }
 
+static bool scan_string_content(TSLexer *lexer, bool is_multiline) {
+  bool has_content = false;
+
+  while (lexer->lookahead != 0) {
+    if (!is_multiline && (lexer->lookahead == '\n' || lexer->lookahead == '\r')) {
+      break;
+    }
+
+    if (lexer->lookahead == '\\') {
+      break;
+    }
+
+    if (lexer->lookahead == '$') {
+      lexer->mark_end(lexer);
+      lexer->advance(lexer, false);
+      if (lexer->lookahead == '{') {
+        break;
+      }
+      has_content = true;
+      lexer->mark_end(lexer);
+      continue;
+    }
+
+    if (lexer->lookahead == '"') {
+      if (!is_multiline) {
+        break;
+      }
+      lexer->mark_end(lexer);
+      lexer->advance(lexer, false);
+      if (lexer->lookahead == '"') {
+        lexer->advance(lexer, false);
+        if (lexer->lookahead == '"') {
+          break;
+        }
+      }
+      has_content = true;
+      lexer->mark_end(lexer);
+      continue;
+    }
+
+    lexer->advance(lexer, false);
+    has_content = true;
+    lexer->mark_end(lexer);
+  }
+
+  if (has_content) {
+    lexer->result_symbol = is_multiline ? MULTILINE_STRING_CONTENT : STRING_CONTENT;
+    return true;
+  }
+
+  return false;
+}
+
 bool tree_sitter_yukino_external_scanner_scan(
   void *payload,
   TSLexer *lexer,
   const bool *valid_symbols
 ) {
   (void)payload;
+
+  bool in_error_recovery =
+    valid_symbols[STRING_CONTENT] && valid_symbols[MULTILINE_STRING_CONTENT];
+  if (!in_error_recovery) {
+    if (valid_symbols[STRING_CONTENT]) {
+      return scan_string_content(lexer, false);
+    }
+    if (valid_symbols[MULTILINE_STRING_CONTENT]) {
+      return scan_string_content(lexer, true);
+    }
+  }
 
   if (!valid_symbols[BLOCK_COMMENT]) {
     return false;

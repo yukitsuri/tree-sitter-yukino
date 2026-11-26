@@ -280,3 +280,65 @@ locked class Service {
         (block
           (space_statement))))))
 
+==================================
+Strings with Comments and Static/Default Fields
+==================================
+class Config {
+    static MAX: int32 = 10
+    set port: int32 = 8080
+    url: string = "http://localhost // /* ok */"
+
+    fun demo() {
+        set s1 = " /* not a block comment */ "
+        set s2 = "cost $5 // not a line comment"
+        set s3 = """
+        // inside multiline
+        /* block inside multiline */
+        """
+    }
+}
+
+---
+
+(source_file
+  (class_declaration
+    (identifier)
+    (class_body
+      (field_declaration
+        (identifier)
+        (primitive_type)
+        (literal
+          (number
+            (integer))))
+      (field_declaration
+        (identifier)
+        (primitive_type)
+        (literal
+          (number
+            (integer))))
+      (field_declaration
+        (identifier)
+        (primitive_type)
+        (literal
+          (string
+            (string_content))))
+      (method_declaration
+        (identifier)
+        (parameters)
+        (block
+          (variable_declaration
+            (identifier)
+            (literal
+              (string
+                (string_content))))
+          (variable_declaration
+            (identifier)
+            (literal
+              (string
+                (string_content))))
+          (variable_declaration
+            (identifier)
+            (literal
+              (string
+                (string_content)))))))))
+

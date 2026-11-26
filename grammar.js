@@ -3,6 +3,8 @@ module.exports = grammar({
 
   externals: $ => [
     $.block_comment,
+    $._string_content,
+    $._multiline_string_content,
   ],
 
   extras: $ => [
@@ -883,24 +885,34 @@ module.exports = grammar({
       seq(/[0-9][0-9_]*/, choice('f32', 'f64'))
     )),
 
-    string: $ => seq(
-      '"',
-      repeat(choice(
-        $.string_content,
-        $.escape_sequence,
-        $.interpolation
-      )),
-      '"'
+    string: $ => choice(
+      seq(
+        '"""',
+        repeat(choice(
+          alias($._multiline_string_content, $.string_content),
+          $.escape_sequence,
+          $.interpolation
+        )),
+        '"""'
+      ),
+      seq(
+        '"',
+        repeat(choice(
+          alias($._string_content, $.string_content),
+          $.escape_sequence,
+          $.interpolation
+        )),
+        '"'
+      )
     ),
-
-    string_content: $ => token.immediate(prec(1, /[^"\\$]+/)),
 
     escape_sequence: $ => token.immediate(seq(
       '\\',
       choice(
         /[^xuU]/,
-        /\$[0-9a-zA-Z_]+/,
+        /\$[0-9a-zA-Z_]*/,
         /x[0-9a-fA-F]{2}/,
+        /u\{[0-9a-fA-F]+\}/,
         /u[0-9a-fA-F]{4}/,
         /U[0-9a-fA-F]{8}/
       )

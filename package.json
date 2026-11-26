@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-yukino",
-  "version": "0.2.0",
+  "version": "0.1.1",
   "description": "Clean Tree-sitter parser for the Yukino programming language",
   "main": "bindings/node",
   "keywords": [
