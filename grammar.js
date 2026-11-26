@@ -20,6 +20,7 @@ module.exports = grammar({
     [$.break_statement],
     [$.continue_statement],
     [$.function_type],
+    [$.function_declaration],
     [$.cfun_declaration],
     [$.import_path],
     [$.import_pattern],
@@ -49,6 +50,7 @@ module.exports = grammar({
     )),
 
     _statement: $ => choice(
+      $.namespace_declaration,
       $.function_declaration,
       $.cfun_declaration,
       $.externc_block,
@@ -110,6 +112,19 @@ module.exports = grammar({
       ))
     ),
 
+    namespace_declaration: $ => seq(
+      'namespace',
+      field('name', $.namespace_path),
+      '{',
+      repeat($._statement),
+      '}'
+    ),
+
+    namespace_path: $ => seq(
+      $.identifier,
+      repeat(seq('.', $.identifier))
+    ),
+
     // Functions
     function_declaration: $ => seq(
       repeat($.attribute),
@@ -119,10 +134,10 @@ module.exports = grammar({
       optional($.type_parameters),
       field('parameters', $.parameters),
       optional(seq('->', field('return_type', $._type))),
-      choice(
+      optional(choice(
         field('body', $.block),
         seq('=>', field('body', $._expression), optional(';'))
-      )
+      ))
     ),
 
     cfun_declaration: $ => seq(
@@ -391,9 +406,10 @@ module.exports = grammar({
     property_declaration: $ => seq(
       repeat($.attribute),
       optional('public'),
+      optional('fun'),
       choice(
-        seq('get', field('name', $.identifier), '(', ')', optional(seq('->', field('return_type', $._type))), field('body', $.block)),
-        seq('set', field('name', $.identifier), '(', field('parameter', $.parameter), ')', field('body', $.block))
+        seq('get', field('name', $.identifier), '(', ')', optional(seq('->', field('return_type', $._type))), optional(field('body', $.block))),
+        seq('set', field('name', $.identifier), '(', field('parameter', $.parameter), ')', optional(field('body', $.block)))
       )
     ),
 
@@ -404,7 +420,7 @@ module.exports = grammar({
       field('name', $.operator_symbol),
       field('parameters', $.parameters),
       optional(seq('->', field('return_type', $._type))),
-      field('body', $.block)
+      optional(field('body', $.block))
     ),
 
     operator_symbol: $ => choice(

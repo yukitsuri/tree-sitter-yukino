@@ -391,3 +391,82 @@ externc "x.h" {
             (primitive_type))))
       (primitive_type))))
 
+==================================
+Interface File (.ykni) Namespaces and Bodyless Decls
+==================================
+#![ykni::version(1)]
+namespace mathlib.core {
+    #[ykni::symbol("__yukifun_add__int32")]
+    public fun add(a: int32, b: int32 = 1) -> int32
+
+    public class Counter {
+        val: int32
+        #[ykni::symbol("_Y_Counter_inc")]
+        public fun inc() -> int32
+        #[ykni::symbol("_Y_Counter___get_val")]
+        public fun get val() -> int32
+    }
+}
+
+---
+
+(source_file
+  (module_attribute
+    (attribute_item
+      (scoped_identifier
+        (identifier)
+        (identifier))
+      (number
+        (integer))))
+  (namespace_declaration
+    (namespace_path
+      (identifier)
+      (identifier))
+    (function_declaration
+      (attribute
+        (attribute_item
+          (scoped_identifier
+            (identifier)
+            (identifier))
+          (string
+            (string_content))))
+      (identifier)
+      (parameters
+        (parameter
+          (identifier)
+          (primitive_type))
+        (parameter
+          (identifier)
+          (primitive_type)
+          (literal
+            (number
+              (integer)))))
+      (primitive_type))
+    (class_declaration
+      (identifier)
+      (class_body
+        (field_declaration
+          (identifier)
+          (primitive_type))
+        (method_declaration
+          (attribute
+            (attribute_item
+              (scoped_identifier
+                (identifier)
+                (identifier))
+              (string
+                (string_content))))
+          (identifier)
+          (parameters)
+          (primitive_type))
+        (property_declaration
+          (attribute
+            (attribute_item
+              (scoped_identifier
+                (identifier)
+                (identifier))
+              (string
+                (string_content))))
+          (identifier)
+          (primitive_type))))))
+
